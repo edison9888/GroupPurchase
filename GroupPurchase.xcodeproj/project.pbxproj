@@ -24,6 +24,7 @@
 		698689C116972D80008E3B6C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698689A016972D7F008E3B6C /* CoreData.framework */; };
 		698689C916972D80008E3B6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698689C716972D80008E3B6C /* InfoPlist.strings */; };
 		698689CC16972D80008E3B6C /* GroupPurchaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 698689CB16972D80008E3B6C /* GroupPurchaseTests.m */; };
+		698689E21697341D008E3B6C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 698689E11697341D008E3B6C /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		698689C816972D80008E3B6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		698689CA16972D80008E3B6C /* GroupPurchaseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupPurchaseTests.h; sourceTree = "<group>"; };
 		698689CB16972D80008E3B6C /* GroupPurchaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupPurchaseTests.m; sourceTree = "<group>"; };
+		698689E01697341D008E3B6C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		698689E11697341D008E3B6C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +176,18 @@
 		698689D616972ECF008E3B6C /* External */ = {
 			isa = PBXGroup;
 			children = (
+				698689DF1697341D008E3B6C /* Reachability */,
 			);
 			name = External;
+			sourceTree = "<group>";
+		};
+		698689DF1697341D008E3B6C /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				698689E01697341D008E3B6C /* Reachability.h */,
+				698689E11697341D008E3B6C /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +302,7 @@
 				698689A916972D7F008E3B6C /* main.m in Sources */,
 				698689AD16972D7F008E3B6C /* AppDelegate.m in Sources */,
 				698689B616972D7F008E3B6C /* GroupPurchase.xcdatamodeld in Sources */,
+				698689E21697341D008E3B6C /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +471,7 @@
 				698689D116972D80008E3B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		698689D216972D80008E3B6C /* Build configuration list for PBXNativeTarget "GroupPurchaseTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +480,7 @@
 				698689D416972D80008E3B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
