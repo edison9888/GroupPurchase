@@ -120,6 +120,8 @@
 		698689A216972D7F008E3B6C /* GroupPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				698689D616972ECF008E3B6C /* External */,
+				698689D516972EBE008E3B6C /* Resource */,
 				698689AB16972D7F008E3B6C /* AppDelegate.h */,
 				698689AC16972D7F008E3B6C /* AppDelegate.m */,
 				698689B416972D7F008E3B6C /* GroupPurchase.xcdatamodeld */,
@@ -159,6 +161,20 @@
 				698689C716972D80008E3B6C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		698689D516972EBE008E3B6C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		698689D616972ECF008E3B6C /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +386,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GroupPurchase/GroupPurchase-Prefix.pch";
 				INFOPLIST_FILE = "GroupPurchase/GroupPurchase-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -381,6 +398,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GroupPurchase/GroupPurchase-Prefix.pch";
 				INFOPLIST_FILE = "GroupPurchase/GroupPurchase-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
