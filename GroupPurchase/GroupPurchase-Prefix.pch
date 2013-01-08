@@ -12,6 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import "ExternalLib.h"
 
     #define UI_NAVIGATION_BAR_HEIGHT        44
     #define UI_TOOL_BAR_HEIGHT              44

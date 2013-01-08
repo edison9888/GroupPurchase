@@ -8,18 +8,48 @@
 
 #import "AppDelegate.h"
 
+
+#define GP_HOST_NAME @"www.qq.com" // 团购服务主机
+#define AnimationInterval (5)      // MTStatusBarOverlay的动画时间
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+// 检测设备是否能连接上服务器
+- (void)checkNetworkReachability
+{
+    _reach = [Reachability reachabilityWithHostname:GP_HOST_NAME];
+    _reach.unreachableBlock = ^(Reachability *reach){
+        
+        /* 当网络连接状态发生改变时Block将在后台线程被调用，所以我们必须在主线程更新UI.
+         * Reachability参考:https://github.com/tonymillion/Reachability
+         * MTStatusBarOverlay参考:https://github.com/myell0w/MTStatusBarOverlay */
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MTStatusBarOverlay *statusBarOverlay = [MTStatusBarOverlay sharedInstance];
+            [statusBarOverlay postErrorMessage:@"亲，网络连接断开了，请连接到网络." duration:AnimationInterval animated:YES];
+        });
+    };
+    
+    _reach.reachableBlock = ^(Reachability *reach){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MTStatusBarOverlay *statusBarOverlay = [MTStatusBarOverlay sharedInstance];
+            [statusBarOverlay postFinishMessage:@"您的设备已连接上网络，祝您购物愉快!" duration:AnimationInterval animated:YES];
+        });
+    };
+    
+    [_reach startNotifier];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+        
     return YES;
 }
 
@@ -37,12 +67,13 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+     
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self checkNetworkReachability];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

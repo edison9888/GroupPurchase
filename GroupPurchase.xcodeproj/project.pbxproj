@@ -25,6 +25,9 @@
 		698689C916972D80008E3B6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698689C716972D80008E3B6C /* InfoPlist.strings */; };
 		698689CC16972D80008E3B6C /* GroupPurchaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 698689CB16972D80008E3B6C /* GroupPurchaseTests.m */; };
 		698689E21697341D008E3B6C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 698689E11697341D008E3B6C /* Reachability.m */; };
+		698689ED1697B81B008E3B6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698689EC1697B81B008E3B6C /* SystemConfiguration.framework */; };
+		698689F61697CCB4008E3B6C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 698689F51697CCB4008E3B6C /* MBProgressHUD.m */; };
+		69A8EC25169BAE4600E99AB8 /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8EC24169BAE4600E99AB8 /* MTStatusBarOverlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,12 @@
 		698689CB16972D80008E3B6C /* GroupPurchaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupPurchaseTests.m; sourceTree = "<group>"; };
 		698689E01697341D008E3B6C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		698689E11697341D008E3B6C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		698689EC1697B81B008E3B6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		698689F41697CCB4008E3B6C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		698689F51697CCB4008E3B6C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		698689F71697CF04008E3B6C /* ExternalLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalLib.h; sourceTree = "<group>"; };
+		69A8EC23169BAE4600E99AB8 /* MTStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStatusBarOverlay.h; sourceTree = "<group>"; };
+		69A8EC24169BAE4600E99AB8 /* MTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStatusBarOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698689ED1697B81B008E3B6C /* SystemConfiguration.framework in Frameworks */,
 				6986899B16972D7F008E3B6C /* UIKit.framework in Frameworks */,
 				6986899D16972D7F008E3B6C /* Foundation.framework in Frameworks */,
 				6986899F16972D7F008E3B6C /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +121,7 @@
 		6986899916972D7F008E3B6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				698689EC1697B81B008E3B6C /* SystemConfiguration.framework */,
 				6986899A16972D7F008E3B6C /* UIKit.framework */,
 				6986899C16972D7F008E3B6C /* Foundation.framework */,
 				6986899E16972D7F008E3B6C /* CoreGraphics.framework */,
@@ -123,11 +134,12 @@
 		698689A216972D7F008E3B6C /* GroupPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				69868A0A1697FCAA008E3B6C /* Controller */,
+				698689FC1697DAD2008E3B6C /* Model */,
 				698689D616972ECF008E3B6C /* External */,
 				698689D516972EBE008E3B6C /* Resource */,
 				698689AB16972D7F008E3B6C /* AppDelegate.h */,
 				698689AC16972D7F008E3B6C /* AppDelegate.m */,
-				698689B416972D7F008E3B6C /* GroupPurchase.xcdatamodeld */,
 				698689A316972D7F008E3B6C /* Supporting Files */,
 			);
 			path = GroupPurchase;
@@ -176,7 +188,10 @@
 		698689D616972ECF008E3B6C /* External */ = {
 			isa = PBXGroup;
 			children = (
+				69A8EC22169BAE4600E99AB8 /* MTStatusBarOverlay */,
+				698689F31697CCB4008E3B6C /* MBProgressHUD */,
 				698689DF1697341D008E3B6C /* Reachability */,
+				698689F71697CF04008E3B6C /* ExternalLib.h */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -188,6 +203,71 @@
 				698689E11697341D008E3B6C /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		698689F31697CCB4008E3B6C /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				698689F41697CCB4008E3B6C /* MBProgressHUD.h */,
+				698689F51697CCB4008E3B6C /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		698689FC1697DAD2008E3B6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				698689B416972D7F008E3B6C /* GroupPurchase.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		69868A0A1697FCAA008E3B6C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69868A0F1697FD02008E3B6C /* More */,
+				69868A0E1697FCF9008E3B6C /* Orders */,
+				69868A0D1697FCD6008E3B6C /* Nearby */,
+				69868A0C1697FCBD008E3B6C /* GroupPurchase */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		69868A0C1697FCBD008E3B6C /* GroupPurchase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GroupPurchase;
+			sourceTree = "<group>";
+		};
+		69868A0D1697FCD6008E3B6C /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Nearby;
+			sourceTree = "<group>";
+		};
+		69868A0E1697FCF9008E3B6C /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		69868A0F1697FD02008E3B6C /* More */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
+		69A8EC22169BAE4600E99AB8 /* MTStatusBarOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				69A8EC23169BAE4600E99AB8 /* MTStatusBarOverlay.h */,
+				69A8EC24169BAE4600E99AB8 /* MTStatusBarOverlay.m */,
+			);
+			path = MTStatusBarOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +383,8 @@
 				698689AD16972D7F008E3B6C /* AppDelegate.m in Sources */,
 				698689B616972D7F008E3B6C /* GroupPurchase.xcdatamodeld in Sources */,
 				698689E21697341D008E3B6C /* Reachability.m in Sources */,
+				698689F61697CCB4008E3B6C /* MBProgressHUD.m in Sources */,
+				69A8EC25169BAE4600E99AB8 /* MTStatusBarOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +435,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tan Yujun (Q2W299L9GQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -366,8 +449,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "60F13A10-0DFB-4049-84E7-934871658F22";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -381,14 +465,16 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tan Yujun (Q2W299L9GQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "60F13A10-0DFB-4049-84E7-934871658F22";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -397,11 +483,13 @@
 		698689D016972D80008E3B6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GroupPurchase/GroupPurchase-Prefix.pch";
 				INFOPLIST_FILE = "GroupPurchase/GroupPurchase-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,11 +497,13 @@
 		698689D116972D80008E3B6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GroupPurchase/GroupPurchase-Prefix.pch";
 				INFOPLIST_FILE = "GroupPurchase/GroupPurchase-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
