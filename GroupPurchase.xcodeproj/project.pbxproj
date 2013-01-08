@@ -17,7 +17,6 @@
 		698689AF16972D7F008E3B6C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 698689AE16972D7F008E3B6C /* Default.png */; };
 		698689B116972D7F008E3B6C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698689B016972D7F008E3B6C /* Default@2x.png */; };
 		698689B316972D7F008E3B6C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 698689B216972D7F008E3B6C /* Default-568h@2x.png */; };
-		698689B616972D7F008E3B6C /* GroupPurchase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 698689B416972D7F008E3B6C /* GroupPurchase.xcdatamodeld */; };
 		698689BE16972D80008E3B6C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698689BD16972D80008E3B6C /* SenTestingKit.framework */; };
 		698689BF16972D80008E3B6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6986899A16972D7F008E3B6C /* UIKit.framework */; };
 		698689C016972D80008E3B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6986899C16972D7F008E3B6C /* Foundation.framework */; };
@@ -28,6 +27,15 @@
 		698689ED1697B81B008E3B6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698689EC1697B81B008E3B6C /* SystemConfiguration.framework */; };
 		698689F61697CCB4008E3B6C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 698689F51697CCB4008E3B6C /* MBProgressHUD.m */; };
 		69A8EC25169BAE4600E99AB8 /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8EC24169BAE4600E99AB8 /* MTStatusBarOverlay.m */; };
+		69A8ECA5169BEDBB00E99AB8 /* StrikeThroughLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8ECA4169BEDBB00E99AB8 /* StrikeThroughLabel.m */; };
+		69E9BFEB169BF50A00A4223F /* ClientToServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E9BFEA169BF50A00A4223F /* ClientToServerAPI.m */; };
+		69E9BFEE169BF95700A4223F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E9BFED169BF95700A4223F /* CoreLocation.framework */; };
+		69E9BFFE169C002400A4223F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E9BFF5169C002400A4223F /* FMDatabase.m */; };
+		69E9BFFF169C002400A4223F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E9BFF7169C002400A4223F /* FMDatabaseAdditions.m */; };
+		69E9C000169C002400A4223F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E9BFF9169C002400A4223F /* FMDatabasePool.m */; };
+		69E9C001169C002400A4223F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E9BFFB169C002400A4223F /* FMDatabaseQueue.m */; };
+		69E9C002169C002400A4223F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E9BFFD169C002400A4223F /* FMResultSet.m */; };
+		69E9C009169C00BE00A4223F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E9C008169C00BE00A4223F /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +63,6 @@
 		698689AE16972D7F008E3B6C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		698689B016972D7F008E3B6C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		698689B216972D7F008E3B6C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		698689B516972D7F008E3B6C /* GroupPurchase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroupPurchase.xcdatamodel; sourceTree = "<group>"; };
 		698689BC16972D80008E3B6C /* GroupPurchaseTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupPurchaseTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		698689BD16972D80008E3B6C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		698689C616972D80008E3B6C /* GroupPurchaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GroupPurchaseTests-Info.plist"; sourceTree = "<group>"; };
@@ -70,6 +77,22 @@
 		698689F71697CF04008E3B6C /* ExternalLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalLib.h; sourceTree = "<group>"; };
 		69A8EC23169BAE4600E99AB8 /* MTStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTStatusBarOverlay.h; sourceTree = "<group>"; };
 		69A8EC24169BAE4600E99AB8 /* MTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTStatusBarOverlay.m; sourceTree = "<group>"; };
+		69A8ECA3169BEDBB00E99AB8 /* StrikeThroughLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrikeThroughLabel.h; sourceTree = "<group>"; };
+		69A8ECA4169BEDBB00E99AB8 /* StrikeThroughLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrikeThroughLabel.m; sourceTree = "<group>"; };
+		69E9BFE9169BF50A00A4223F /* ClientToServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientToServerAPI.h; sourceTree = "<group>"; };
+		69E9BFEA169BF50A00A4223F /* ClientToServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientToServerAPI.m; sourceTree = "<group>"; };
+		69E9BFED169BF95700A4223F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		69E9BFF4169C002400A4223F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		69E9BFF5169C002400A4223F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		69E9BFF6169C002400A4223F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		69E9BFF7169C002400A4223F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		69E9BFF8169C002400A4223F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		69E9BFF9169C002400A4223F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		69E9BFFA169C002400A4223F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		69E9BFFB169C002400A4223F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		69E9BFFC169C002400A4223F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		69E9BFFD169C002400A4223F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		69E9C008169C00BE00A4223F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E9C009169C00BE00A4223F /* libsqlite3.dylib in Frameworks */,
+				69E9BFEE169BF95700A4223F /* CoreLocation.framework in Frameworks */,
 				698689ED1697B81B008E3B6C /* SystemConfiguration.framework in Frameworks */,
 				6986899B16972D7F008E3B6C /* UIKit.framework in Frameworks */,
 				6986899D16972D7F008E3B6C /* Foundation.framework in Frameworks */,
@@ -121,6 +146,8 @@
 		6986899916972D7F008E3B6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69E9C008169C00BE00A4223F /* libsqlite3.dylib */,
+				69E9BFED169BF95700A4223F /* CoreLocation.framework */,
 				698689EC1697B81B008E3B6C /* SystemConfiguration.framework */,
 				6986899A16972D7F008E3B6C /* UIKit.framework */,
 				6986899C16972D7F008E3B6C /* Foundation.framework */,
@@ -188,6 +215,8 @@
 		698689D616972ECF008E3B6C /* External */ = {
 			isa = PBXGroup;
 			children = (
+				69E9BFF3169C002400A4223F /* FMDB */,
+				69A8ECA2169BEDBB00E99AB8 /* StrikeThroughLabel */,
 				69A8EC22169BAE4600E99AB8 /* MTStatusBarOverlay */,
 				698689F31697CCB4008E3B6C /* MBProgressHUD */,
 				698689DF1697341D008E3B6C /* Reachability */,
@@ -217,7 +246,8 @@
 		698689FC1697DAD2008E3B6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				698689B416972D7F008E3B6C /* GroupPurchase.xcdatamodeld */,
+				69E9BFE9169BF50A00A4223F /* ClientToServerAPI.h */,
+				69E9BFEA169BF50A00A4223F /* ClientToServerAPI.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,6 +298,32 @@
 				69A8EC24169BAE4600E99AB8 /* MTStatusBarOverlay.m */,
 			);
 			path = MTStatusBarOverlay;
+			sourceTree = "<group>";
+		};
+		69A8ECA2169BEDBB00E99AB8 /* StrikeThroughLabel */ = {
+			isa = PBXGroup;
+			children = (
+				69A8ECA3169BEDBB00E99AB8 /* StrikeThroughLabel.h */,
+				69A8ECA4169BEDBB00E99AB8 /* StrikeThroughLabel.m */,
+			);
+			path = StrikeThroughLabel;
+			sourceTree = "<group>";
+		};
+		69E9BFF3169C002400A4223F /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				69E9BFF4169C002400A4223F /* FMDatabase.h */,
+				69E9BFF5169C002400A4223F /* FMDatabase.m */,
+				69E9BFF6169C002400A4223F /* FMDatabaseAdditions.h */,
+				69E9BFF7169C002400A4223F /* FMDatabaseAdditions.m */,
+				69E9BFF8169C002400A4223F /* FMDatabasePool.h */,
+				69E9BFF9169C002400A4223F /* FMDatabasePool.m */,
+				69E9BFFA169C002400A4223F /* FMDatabaseQueue.h */,
+				69E9BFFB169C002400A4223F /* FMDatabaseQueue.m */,
+				69E9BFFC169C002400A4223F /* FMResultSet.h */,
+				69E9BFFD169C002400A4223F /* FMResultSet.m */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,10 +437,16 @@
 			files = (
 				698689A916972D7F008E3B6C /* main.m in Sources */,
 				698689AD16972D7F008E3B6C /* AppDelegate.m in Sources */,
-				698689B616972D7F008E3B6C /* GroupPurchase.xcdatamodeld in Sources */,
 				698689E21697341D008E3B6C /* Reachability.m in Sources */,
 				698689F61697CCB4008E3B6C /* MBProgressHUD.m in Sources */,
 				69A8EC25169BAE4600E99AB8 /* MTStatusBarOverlay.m in Sources */,
+				69A8ECA5169BEDBB00E99AB8 /* StrikeThroughLabel.m in Sources */,
+				69E9BFEB169BF50A00A4223F /* ClientToServerAPI.m in Sources */,
+				69E9BFFE169C002400A4223F /* FMDatabase.m in Sources */,
+				69E9BFFF169C002400A4223F /* FMDatabaseAdditions.m in Sources */,
+				69E9C000169C002400A4223F /* FMDatabasePool.m in Sources */,
+				69E9C001169C002400A4223F /* FMDatabaseQueue.m in Sources */,
+				69E9C002169C002400A4223F /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,19 +635,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		698689B416972D7F008E3B6C /* GroupPurchase.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				698689B516972D7F008E3B6C /* GroupPurchase.xcdatamodel */,
-			);
-			currentVersion = 698689B516972D7F008E3B6C /* GroupPurchase.xcdatamodel */;
-			path = GroupPurchase.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6986898D16972D7F008E3B6C /* Project object */;
 }
