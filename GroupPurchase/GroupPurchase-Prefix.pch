@@ -13,13 +13,51 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import<CoreLocation/CoreLocation.h>
-    #import "ExternalLib.h"
+    #import "MBProgressHUD.h"
+    #import "AppDelegate.h"
 
-    #define UI_NAVIGATION_BAR_HEIGHT        44
-    #define UI_TOOL_BAR_HEIGHT              44
-    #define UI_TAB_BAR_HEIGHT               49
-    #define UI_STATUS_BAR_HEIGHT            20
-    #define UI_SCREEN_WIDTH                 320
-    #define UI_SCREEN_HEIGHT                ([[UIScreen mainScreen] bounds].size.height)
+    #define LH_NAVIGATION_BAR_HEIGHT        44
+    #define LH_TOOL_BAR_HEIGHT              44
+    #define LH_TAB_BAR_HEIGHT               49
+    #define LH_STATUS_BAR_HEIGHT            20
+    #define LH_SCREEN_WIDTH                 320
+
+    #define LH_SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+    #define AppDel [AppDelegate appDelegateInstance]
+
+    #define saveUserName(userName) [AppDel.keychain setObject:userName forKey:(__bridge id)(kSecAttrAccount)]
+    #define saveUserPassword(pwd)  [AppDel.keychain setObject:pwd forKey:(__bridge id)kSecValueData]
+
+    #define UserName [AppDel.keychain objectForKey:(__bridge id)(kSecAttrAccount)]
+    #define Password [AppDel.keychain objectForKey:(__bridge id)kSecValueData]
+
+    #define INT_TO_STR(i)   [NSString stringWithFormat:@"%d",i]
+    #define FLOAT_TO_STR(f) [NSString stringWithFormat:@"%.1f",f]
+
+    #define Alert(msg) UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];\
+    [av show]
+
+    /* @animation YES使用动画
+     * @roh YES隐藏视图后将视图从父视图中移除
+     */
+    #define showHudWith(view,title,animation, roh)\
+        {MBProgressHUD *hud = [MBProgressHUD HUDForView:view];\
+        if(!hud)\
+            hud = [MBProgressHUD showHUDAddedTo:view animated:NO];\
+        if(!animation) hud.mode = MBProgressHUDModeText;\
+        hud.labelText = title;\
+        [hud show:NO];\
+        if(roh){\
+            hud.removeFromSuperViewOnHide = YES;\
+            [hud hide:NO afterDelay:1.5];\
+        }}
+
+    #define removeHudFromView(view)\
+    {MBProgressHUD *hud = [MBProgressHUD HUDForView:view];\
+    if(hud){ \
+        [hud removeFromSuperview];\
+    }}
+
 
 #endif

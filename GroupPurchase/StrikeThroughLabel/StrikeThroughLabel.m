@@ -16,7 +16,7 @@
 - (void)drawTextInRect:(CGRect)rect{
     [super drawTextInRect:rect];
     
-    if (_strikeThroughEnabled) {
+    if (1) {
         CGSize textSize = [[self text] sizeWithFont:[self font]];
         CGFloat strikeWidth = textSize.width;
         CGRect lineRect;

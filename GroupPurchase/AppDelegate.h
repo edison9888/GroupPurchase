@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserInfo.h"
+#import "Reachability.h"
+#import "KeychainItemWrapper.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class BMKMapManager;
 
-@property (strong, nonatomic) UIWindow *window;
+@interface AppDelegate : UIResponder <UIApplicationDelegate,
+                                      UITabBarControllerDelegate>
 
-/* 用于检测是否能连接到服务器.
- * -(BOOL)isReachable;        // 能连接到网络?
- * -(BOOL)isReachableViaWWAN; // 通过3G连接?
- * -(BOOL)isReachableViaWiFi; // 通过WiFi连接?
- * 参考:http://stackoverflow.com/questions/7938650/ios-detect-3g-or-wifi */
-
+@property(strong, nonatomic) UIWindow *window;
 @property(readonly, strong, nonatomic) Reachability *reach;
+@property(readonly, strong, nonatomic) KeychainItemWrapper *keychain;
+@property(readonly, strong, nonatomic) UserInfo *userInfo;
+
++ (AppDelegate *)appDelegateInstance;
 
 @end

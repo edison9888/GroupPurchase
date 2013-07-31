@@ -7,69 +7,105 @@
 //
 
 #import "AppDelegate.h"
+#import "GPController.h"
+#import "UserLoginController.h"
+#import "MBProgressHUD.h"
 
-#define AnimationInterval (5)      // MTStatusBarOverlay的动画时间
 
 @implementation AppDelegate
 
-// 检测设备是否能连接上服务器
-- (void)checkNetworkReachability
-{
-    _reach = [Reachability reachabilityWithHostname: @"www.qq.com"];
-    _reach.unreachableBlock = ^(Reachability *reach){
-        
-        /* 当网络连接状态发生改变时Block将在后台线程被调用，所以我们必须在主线程更新UI.
-         * Reachability 参考:https://github.com/tonymillion/Reachability
-         * MTStatusBarOverlay 参考:https://github.com/myell0w/MTStatusBarOverlay */
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            MTStatusBarOverlay *statusBarOverlay = [MTStatusBarOverlay sharedInstance];
-            [statusBarOverlay postErrorMessage:@"亲，网络连接断开了，请连接到网络." duration:AnimationInterval animated:YES];
-        });
-    };
-    
-    _reach.reachableBlock = ^(Reachability *reach){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            MTStatusBarOverlay *statusBarOverlay = [MTStatusBarOverlay sharedInstance];
-            [statusBarOverlay postFinishMessage:@"设备已连接上网络，祝您购物愉快!" duration:AnimationInterval animated:YES];
-        });
-    };
-    
-    [_reach startNotifier];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    [self checkNetworkReachability];
+    [self customizeAppearance];
+    
+    _keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"UserAccount" accessGroup:nil];
+    _userInfo = [[UserInfo alloc] init];
+    
+    GroupPurchaseController *gpc = nil;
+    NearbyController        *nc  = nil;
+    OrdersController        *oc  = nil;
+    MoreViewController      *mc  = nil;
+    
+    gpc = [[GroupPurchaseController alloc] initWithNibName:@"GroupPurchaseController" bundle:nil];
+    nc  = [[NearbyController alloc] initWithNibName:@"NearbyController" bundle:nil];
+    oc  = [[OrdersController alloc] initWithNibName:@"OrdersController" bundle:nil];
+    mc  = [[MoreViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    UINavigationController *nav1, *nav2, *nav3, *nav4;
+    nav1 = [[UINavigationController alloc] initWithRootViewController:gpc];
+    nav2 = [[UINavigationController alloc] initWithRootViewController:nc];
+    nav3 = [[UINavigationController alloc] initWithRootViewController:oc];
+    nav4 = [[UINavigationController alloc] initWithRootViewController:mc];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[nav1,nav2,nav3,nav4];
+    tabBarController.tabBar.selectedImageTintColor = [UIColor orangeColor];
+    tabBarController.delegate = self;
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor yellowColor];
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-        
+
+    //18984325559 密码18984325559
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
 
+#pragma mark- UITabbarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    UINavigationController *nc = (UINavigationController *)viewController;
+    
+    // 如果用户切换到"订单“栏目,那么需要检测用户是否登陆，如果没登陆就弹出登陆界面.
+    if([nc.topViewController isKindOfClass:[OrdersController class]] ||
+       [nc.topViewController isKindOfClass:[UserLoginController class]])
+    {
+        NSString *userName = [self.keychain objectForKey:(__bridge id)(kSecAttrAccount)];
+        if([userName isEqualToString:@""] || [userName isEqual:nil])
+        {
+            UserLoginController *ulc = [[UserLoginController alloc] initWithNibName:@"UserLoginController" bundle:nil];
+            ulc.fromMyOrderListController = YES;
+            [nc pushViewController:ulc animated:NO];
+        }else{
+            [nc popToRootViewControllerAnimated:NO];
+        }
+    }
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
++ (AppDelegate *)appDelegateInstance
 {
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
+}
 
+- (void)checkNetworkReachability
+{
+    _reach = [Reachability reachabilityWithHostname: @"www.baidu.com"];
+    _reach.unreachableBlock = ^(Reachability *reach){};
+    [_reach startNotifier];
+}
+
+- (void)customizeAppearance
+{
+    UIImage *navBarBackground  = [UIImage imageNamed:@"nav_bar_bg"];
+    [[UINavigationBar appearance] setBackgroundImage:navBarBackground forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *backButtonImage = [[UIImage imageNamed:@"nav_back_button"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 15, 4, 4)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
+                                                      forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    UIImage *tabBarBackground      = [UIImage imageNamed:@"tab_bar_bg"];
+    UIImage *tabBarSelectIndicator = [UIImage imageNamed:@"tab_bar_select_indicator"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    [[UITabBar appearance] setSelectionIndicatorImage:tabBarSelectIndicator];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-     
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    [self checkNetworkReachability];
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    
 }
 
 @end
