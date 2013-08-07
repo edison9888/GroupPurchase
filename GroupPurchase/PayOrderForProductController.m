@@ -85,10 +85,11 @@ extern NSString *const UseCouponNotification;
             self.userAccountBalanceLabel.text = [NSString stringWithFormat:@"%.1f元", userInfo.userLoginedInfo.accountBalance];
         } faile:^(ErrorType errorType)
         {
+            NSLog(@"获取用户余额失败");
             if(AppDel.reach.isReachable){
-                showHudWith(self.view, @"获取用户余额失败，请连接到网络。", NO, YES);
+                //showHudWith(self.view, @"获取用户余额失败", NO, YES);
             }else{
-                showHudWith(self.view, @"获取用户余额失败", NO, YES);
+                //showHudWith(self.view, @"获取用户余额失败", NO, YES);
             }
         }];
     }else{
@@ -137,8 +138,19 @@ extern NSString *const UseCouponNotification;
         return;
     }
     
+    OrderWapper *wapper = [OrderWapper shareInstance];
+    wapper.pID = INT_TO_STR(self.product.ID);
+    wapper.userID = UserName;
+    wapper.recevierName = wapper.userID;
+    wapper.phoneNumber = AppDel.userInfo.bindPhone;
+    wapper.unitPrice = self.product.priceGroup;
+    wapper.payType = 3;
+    wapper.totalPrice = self.product.priceGroup * self.product.buyAmount;
+    wapper.quantity = self.product.buyAmount;
+    
     PayOrderController *poc = [[PayOrderController alloc] initWithNibName:@"PayOrderController" bundle:nil];
     [self.navigationController pushViewController:poc animated:YES];
+    poc.orderWapper = wapper;
 }
 
 - (void)handelUseCouponNotification:(NSNotification *)notification

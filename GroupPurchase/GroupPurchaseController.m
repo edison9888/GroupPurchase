@@ -262,6 +262,7 @@ static const NSUInteger pageSize = 50;
     NSArray *userInfo = notification.userInfo[@"key"];
     NSString *cityName = userInfo[0];
     NSNumber *cityID   = userInfo[1];
+    _cityID = cityID.integerValue;
     
     [_cityNameButton setTitle:[NSString stringWithFormat:@"[%@]",cityName] forState:UIControlStateNormal];
     [self loadProductListWithCityID:cityID.integerValue ProductType:_productType SortType:_sortType lon:0 lat:0];

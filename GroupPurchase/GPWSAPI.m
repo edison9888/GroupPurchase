@@ -110,6 +110,8 @@
          {
            if(data.length > 0 && !error)
            {
+               NSLog(@"余额:%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+               
                NSError *err =nil;
                NSJSONReadingOptions options =   NSJSONReadingMutableContainers
                | NSJSONReadingMutableLeaves
@@ -550,7 +552,7 @@
     
     NSDictionary *dic = @{@"Address":(address ? address : @""),
                           @"CityId":cityID,
-                          @"Mobile":phoneNumber,
+                          @"Mobile":(phoneNumber ? phoneNumber : @""),
                           @"Money":[NSNumber numberWithFloat:unitPrice],
                           @"Online_Pay_Type":[NSNumber numberWithInt:payType],
                           @"Price":[NSNumber numberWithFloat:totalPrice],

@@ -56,19 +56,21 @@ NSString *const UserLoginSuccessNotification = @"UserLoginSuccessNotification";
         Alert(@"请输入用户名");
         return;
     }
+    
+    // 会员登陆无需密码
     if(userPassword.length == 0)
     {
         Alert(@"请输入密码");
         return;
     }
-    
+  
     showHudWith(self.view, @"正在登陆", YES, NO);
     [GPWSAPI userLoginWithUserName:userName userPassword:userPassword loginType:_userLoginType success:^(BOOL aBool)
     {
         if(aBool)
         {            
             saveUserName(userName);
-            saveUserName(userPassword);
+            saveUserPassword(userPassword);
                         
             // 有MoreControll处理此通知来更新界面
             [self.navigationController popViewControllerAnimated:NO];
@@ -92,8 +94,8 @@ NSString *const UserLoginSuccessNotification = @"UserLoginSuccessNotification";
 
 - (IBAction)retakeUserPassword:(UIButton *)sender
 {
-    RetakeUserPasswordController *rupc = [[RetakeUserPasswordController alloc] initWithNibName:@"RetakeUserPasswordController" bundle:nil];
-    [self.navigationController pushViewController:rupc animated:YES];
+//    RetakeUserPasswordController *rupc = [[RetakeUserPasswordController alloc] initWithNibName:@"RetakeUserPasswordController" bundle:nil];
+//    [self.navigationController pushViewController:rupc animated:YES];
 }
 
 - (IBAction)switchUserLoginType:(UIButton *)sender

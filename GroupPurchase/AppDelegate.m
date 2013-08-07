@@ -16,6 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 
     [self checkNetworkReachability];
     [self customizeAppearance];
@@ -54,6 +55,11 @@
     return YES;
 }
 
+void uncaughtExceptionHandler(NSException *exception)
+{
+    NSLog(@"程序崩溃: %@", exception);
+    NSLog(@"\n------------------------------------------------------------------\n调用栈:\n %@", [exception callStackSymbols]);
+}
 
 #pragma mark- UITabbarControllerDelegate
 

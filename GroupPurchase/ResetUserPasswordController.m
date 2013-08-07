@@ -38,6 +38,9 @@
 - (IBAction)resetUserPassword:(id)sender
 {
     NSString *oldPassword, *newPassword, *repeatNewPassord;
+    NSString *userName, *userPassowrd;
+    userName = UserName;
+    userPassowrd = Password;
     
     oldPassword = self.oldPasswordTextField.text;
     newPassword = self.nnewPasswordTextField.text;
@@ -47,11 +50,8 @@
     if(!newPassword.length){Alert(@"请输入新密码"); return;}
     if(!repeatNewPassord.length){Alert(@"请确认新密码"); return;}
     if(![newPassword isEqualToString:repeatNewPassord]){Alert(@"两次输入不一致"); return;}
-    
-    NSString *userName, *userPassowrd;
-    KeychainItemWrapper *wrapper = [AppDelegate appDelegateInstance].keychain;
-    userName = [wrapper objectForKey:(__bridge id)kSecAttrAccount];
-    userPassowrd = [wrapper objectForKey:(__bridge id)kSecValueData];
+    if([userPassowrd isEqualToString:oldPassword] == NO){Alert(@"旧密码和当前登陆密码不一致"); return;}
+
     
     [GPWSAPI resetPasswordWithUserName:userName
                               password:userPassowrd

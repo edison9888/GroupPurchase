@@ -65,7 +65,8 @@ extern NSString *const RebindPhoneNumberSuccess;
     if(userInfo.bindPhone == nil){
         [GPWSAPI getBindPhoneNumberWithUserName:UserName success:^(NSString *number)
         {
-            if([number isEqual:nil] || [number isEqualToString:@""])
+            
+            if([[number class] isSubclassOfClass:[NSNull class]] || [number isEqual:nil] || [number isEqualToString:@""])
             {
                 self.isUserBindPhoneNumber = NO;
             }else{

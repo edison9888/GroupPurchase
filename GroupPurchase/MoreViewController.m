@@ -97,8 +97,8 @@
 
 - (void)refreshUI
 {
-    NSString *userName = [[AppDelegate appDelegateInstance].keychain objectForKey:(__bridge id)(kSecAttrAccount)];
-    self.userNicknameLabel.text = userName;
+    NSString *userName = UserName;
+    self.userNicknameLabel.text = UserName;
     
     if([userName isEqualToString:@""] || [userName isEqual:nil])
     {
@@ -146,7 +146,7 @@
 
 - (IBAction)call118114:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"tel:118114"];
+    NSURL *url = [NSURL URLWithString:@"tel:4001096138"];
     if([[UIApplication sharedApplication] canOpenURL:url] == NO)
     {
         Alert(@"你的设备不支持打电话功能");

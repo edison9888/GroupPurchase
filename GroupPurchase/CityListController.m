@@ -136,13 +136,31 @@ NSString *const SwitchCityNotification = @"SwitchCityNotification";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    #define AreaCode @"areaCode"
+    #define CityCode @"cityCode"
+    
     NSArray *userInfo = nil;
+    NSString *key = self.cityKeys[indexPath.section];
+    NSArray *cities = self.cities[key];
+    NSDictionary *city = cities[indexPath.row];
+    NSString *cityName = city[@"CityName"];
+    
+    if([cityName isEqualToString:@"广州市"]){
+        [[NSUserDefaults standardUserDefaults] setObject:@"440000" forKey:AreaCode];
+        [[NSUserDefaults standardUserDefaults] setObject:@"189" forKey:CityCode];
+    }else if([cityName isEqualToString:@"西宁市"]){
+        [[NSUserDefaults standardUserDefaults] setObject:@"630000" forKey:AreaCode];
+        [[NSUserDefaults standardUserDefaults] setObject:@"434" forKey:CityCode];
+    }else if([cityName isEqualToString:@"重庆市"]){
+        [[NSUserDefaults standardUserDefaults] setObject:@"510000" forKey:AreaCode];
+        [[NSUserDefaults standardUserDefaults] setObject:@"13" forKey:CityCode];
+    }else{
+        [[NSUserDefaults standardUserDefaults] setObject:@"null" forKey:AreaCode];
+        //[[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:CityCode];
+    }
     
     if(indexPath.section != 0)
     {
-        NSString *key = self.cityKeys[indexPath.section];
-        NSArray *cities = self.cities[key];
-        NSDictionary *city = cities[indexPath.row];
         userInfo = @[city[@"CityName"],city[@"CityID"]];
     }
     else

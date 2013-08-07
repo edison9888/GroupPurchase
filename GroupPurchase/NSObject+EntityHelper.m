@@ -33,8 +33,12 @@
     if([[obj class] isSubclassOfClass:[NSNull class]]){
         return 0;
     }
+    
+    if([key isEqualToString:@"PayMent"]){
+        NSLog(@"--");
+        return 100;
+    }
     return ((NSNumber *)obj).unsignedIntegerValue;
-
 }
 
 - (CGFloat)floatWithKey:(NSString *)key dictory:(NSDictionary *)dic

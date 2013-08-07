@@ -82,10 +82,11 @@ extern NSString *const UseCouponNotification;
              self.userAccountBalanceLabel.text = [NSString stringWithFormat:@"%.1f元", userInfo.userLoginedInfo.accountBalance];
          } faile:^(ErrorType errorType)
          {
+             NSLog(@"获取用户余额失败");
              if(AppDel.reach.isReachable){
-                 showHudWith(self.view, @"获取用户余额失败，请连接到网络。", NO, YES);
+                 //showHudWith(self.view, @"获取用户余额失败，请连接到网络。", NO, YES);
              }else{
-                 showHudWith(self.view, @"获取用户余额失败", NO, YES);
+                 //showHudWith(self.view, @"获取用户余额失败", NO, YES);
              }
          }];
     }else{

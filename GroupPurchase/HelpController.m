@@ -33,7 +33,7 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.dataSource = @[@"关于118114",
+    self.dataSource = @[@"关于通通团",
                         @"关于支付问题", 
                         @"积份规则",   
                         @"如何获取现金抵用卷",
