@@ -70,7 +70,7 @@
     a = @[
           @[
             @{@"icon":@"ziLiao",@"text":@"我的详细资料"},
-            @{@"icon":@"youHuiJuan",@"text":@"现金抵用卷"}
+            @{@"icon":@"youHuiJuan",@"text":@"现金抵用券"}
            ],
           
           @[

@@ -181,16 +181,15 @@
     }
    
     NSString *userName, *userPassowrd;
-    KeychainItemWrapper *wrapper = [AppDelegate appDelegateInstance].keychain;
-    userName = [wrapper objectForKey:(__bridge id)kSecAttrAccount];
-    userPassowrd = [wrapper objectForKey:(__bridge id)kSecValueData];
+    userName = UserName;
+    userPassowrd = Password;
     
     [GPWSAPI addShippingAddressWithConsigneName:consigneName
                                        telphone:telphoneNumber
                                         address:fullAddress
                                         zipcode:zipCode
                                isDefaultAddress:[NSNumber numberWithInteger:(self.isDefaultAddress ? 1 : 0)]
-                                       userName:userPassowrd
+                                       userName:userName
                                    userPassword:userPassowrd success:^(BOOL yesOrNo)
                                    {
                                        if(yesOrNo)

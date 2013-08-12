@@ -108,10 +108,10 @@
      {
        dispatch_async(dispatch_get_main_queue(), ^
          {
+             NSLog(@"余额:%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
            if(data.length > 0 && !error)
            {
-               NSLog(@"余额:%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-               
                NSError *err =nil;
                NSJSONReadingOptions options =   NSJSONReadingMutableContainers
                | NSJSONReadingMutableLeaves
@@ -236,7 +236,7 @@
 }
 
 #pragma mark -
-#pragma mark - 订单,优惠卷
+#pragma mark - 订单,优惠券
 
 
 #pragma mark -
@@ -339,7 +339,7 @@
     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
     NSMutableURLRequest *request = [NSMutableURLRequest new];
     [request addValue:[NSString stringWithFormat:@"%@/%@",userName,password] forHTTPHeaderField:@"Authorization"];
-    [GPWSAPI postDataToServerWithAddress:MakeAPIAddress(SYSTEM_SERVICE, USER_RESET_PASSWORD) request:[NSMutableURLRequest new]
+    [GPWSAPI postDataToServerWithAddress:MakeAPIAddress(SYSTEM_SERVICE, USER_RESET_PASSWORD) request:request
                                 jsonData:data success:^(id jsonObj)
      {
          NSDictionary *dic = jsonObj;

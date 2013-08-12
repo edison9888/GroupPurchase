@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-// 优惠卷
+// 优惠券
 @interface Coupon : NSObject
 @property(nonatomic, assign)  NSInteger couponID;
 @property(nonatomic, strong)  NSString  *couponNum;     // 优惠券验证号

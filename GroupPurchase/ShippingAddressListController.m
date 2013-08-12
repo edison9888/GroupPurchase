@@ -32,28 +32,21 @@ NSString *const ChangeShippingAddressNotification = @"ChangeShippingAddressNotif
     
     self.title = @"收货地址";
     [self.tableView registerNib:[UINib nibWithNibName:@"ShippingAddressCell" bundle:nil] forCellReuseIdentifier:@"ShippingAddressCell"];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    UserInfo *userInfo = [AppDelegate appDelegateInstance].userInfo;
-    self.dataSource = userInfo.shippingAdress;
-    
-    if(!self.dataSource)
-    {
-        KeychainItemWrapper *keychain = [AppDelegate appDelegateInstance].keychain;
-        NSString *userAccount = [keychain objectForKey:(__bridge id)(kSecAttrAccount)];
-        
-        [GPWSAPI getShippingAddressWithUserName:userAccount success:^(NSArray *array)
-        {
-            self.dataSource = array;
-            [self.tableView reloadData];
-        } faile:^(ErrorType errorType)
-        {
-            NSLog(@"获取收货地址失败");
-        }];
-    }
-    else
-    {
-        [self.tableView reloadData];
-    }
+    NSString *userAccount = UserName;
+    [GPWSAPI getShippingAddressWithUserName:userAccount success:^(NSArray *array)
+     {
+         self.dataSource = array;
+         [self.tableView reloadData];
+     } faile:^(ErrorType errorType)
+     {
+         NSLog(@"获取收货地址失败");
+     }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -68,7 +61,7 @@ NSString *const ChangeShippingAddressNotification = @"ChangeShippingAddressNotif
     ShippingAddress *sa = self.dataSource[indexPath.row];
     cell.userNameLabel.text = sa.consigneeName;
     cell.addressLabel.text = sa.address;
-    cell.accessoryType = (sa.flag == 1 ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
+    //cell.accessoryType = (sa.flag == 1 ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
     
     if(sa.flag) self.checkmarkIndexPath = indexPath;
     return cell;

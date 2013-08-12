@@ -121,7 +121,7 @@ extern NSString *const UseCouponNotification;
     [sheet showInView:self.view];
 }
 
-// 使用优惠卷
+// 使用优惠券
 -(IBAction)useCoupon:(id)sender
 {
     MyCouponListController *mclc = [[MyCouponListController alloc] initWithStyle:UITableViewStylePlain];

@@ -42,5 +42,18 @@
          landmarkName = "+refundWithOrderNumber:userName:verificationCode:reason:success:faile:"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GroupPurchase/GPWSAPI.m"
+         timestampString = "397558563.138508"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "392"
+         endingLineNumber = "392"
+         landmarkName = "+addShippingAddressWithConsigneName:telphone:address:zipcode:isDefaultAddress:userName:userPassword:success:faile:"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

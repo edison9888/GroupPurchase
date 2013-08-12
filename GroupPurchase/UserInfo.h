@@ -14,5 +14,5 @@
 @property(nonatomic, copy)      NSString           *bindPhone;       // 绑定电话
 @property(nonatomic, strong)    NSArray            *shippingAdress;  // 送货地址集合(ShippingAddress对象的集合)
 @property(nonatomic, strong)    UserHasLoginedInfo *userLoginedInfo; // 已登陆用户信息(账户余额,积分)
-@property(nonatomic, strong)    NSArray            *myCoupons;       // 我的优惠卷(Coupons对象集合)
+@property(nonatomic, strong)    NSArray            *myCoupons;       // 我的优惠券(Coupons对象集合)
 @end

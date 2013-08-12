@@ -169,14 +169,14 @@ typedef NSInteger PaymentStatus;    // 订单支付状态
                                  faile:(void(^)(ErrorType errorType))faile;
 
 
-// 获取我的优惠卷
+// 获取我的优惠券
 + (void)getMyCouponsWithUserName:(NSString *)userName
                       couponType:(CouponType )atype
                          success:(void(^)(NSArray *array))success
                            faile:(void(^)(ErrorType errorType))faile;
 
 
-// 更新优惠卷状态到已使用
+// 更新优惠券状态到已使用
 + (void)updateMyCouponState:(NSString *)couponNumber
                    userName:(NSString *)userName
                     success:(void(^)(BOOL))success

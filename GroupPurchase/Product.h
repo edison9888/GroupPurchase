@@ -62,7 +62,7 @@
 @property(nonatomic,assign) NSUInteger      type;                   // 商品类别,1:商品团购,2:生活服务,3:特惠商品(当商品类处理)
 
 @property(nonatomic,assign) NSUInteger      buyAmount;              // 购买数量(此字段来用存放客户在订单界面选择购买商品的个数，服务器端无此字段)
-@property(nonatomic,assign) CGFloat         payable;                // 实际付款(实际付款等于:单价*数量-优惠卷金额)
+@property(nonatomic,assign) CGFloat         payable;                // 实际付款(实际付款等于:单价*数量-优惠券金额)
 @property(nonatomic,copy)   NSString        *songHuoRiQi;           // 送货日期
 @property(nonatomic, strong) ShippingAddress *sadress;              // 默认的收货地址对象
 

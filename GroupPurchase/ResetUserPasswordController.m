@@ -61,6 +61,7 @@
                                 {
                                     if(aBool)
                                     {
+                                        saveUserPassword(newPassword);
                                         Alert(@"重置密码成功");
                                     }
                                     else

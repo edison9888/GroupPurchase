@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-// 我的优惠卷列表
+// 我的优惠券列表
 @interface MyCouponListController : UITableViewController
 @property(nonatomic, assign) BOOL canSelect;
 @end

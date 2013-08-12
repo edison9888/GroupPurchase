@@ -370,7 +370,7 @@
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">用优惠卷</string>
+										<string key="IBUIText">用优惠券</string>
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
 										<reference key="IBUIFontDescription" ref="14453306"/>

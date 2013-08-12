@@ -32,7 +32,7 @@ NSString *const UseCouponNotification = @"UseCouponNotification";
 {
     [super viewDidLoad];
     
-    self.title = @"我的优惠卷";
+    self.title = @"我的优惠券";
     
     self.tableView.rowHeight = 63;
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCoupanListCell" bundle:nil] forCellReuseIdentifier:@"MyCoupanListCell"];
@@ -40,7 +40,7 @@ NSString *const UseCouponNotification = @"UseCouponNotification";
     UserInfo *userInfo = AppDel.userInfo;
     if(userInfo.myCoupons == nil)
     {
-        showHudWith(self.view, @"正在获取优惠卷", YES, NO);
+        showHudWith(self.view, @"正在获取优惠券", YES, NO);
         
         [GPWSAPI getMyCouponsWithUserName:UserName couponType:CouponTypeUnuse success:^(NSArray *array) {
             removeHudFromView(self.view);
@@ -55,9 +55,9 @@ NSString *const UseCouponNotification = @"UseCouponNotification";
             
             if(AppDel.reach.isReachable)
             {
-                showHudWith(self.view, @"获取优惠卷失败", NO, YES);
+                showHudWith(self.view, @"获取优惠券失败", NO, YES);
             }else{
-                showHudWith(self.view, @"获取优惠卷失败,请连接到网络", NO, YES);
+                showHudWith(self.view, @"获取优惠券失败,请连接到网络", NO, YES);
             }
         }];
     }else{
@@ -80,7 +80,7 @@ NSString *const UseCouponNotification = @"UseCouponNotification";
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if(self.dataSource.count == 0){
-        cell.textLabel.text = @"您没有优惠卷";
+        cell.textLabel.text = @"您没有优惠券";
         return cell;
     }
     
