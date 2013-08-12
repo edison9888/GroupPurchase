@@ -28,6 +28,8 @@
 
     #define saveUserName(userName) [AppDel.keychain setObject:userName forKey:(__bridge id)(kSecAttrAccount)]
     #define saveUserPassword(pwd)  [AppDel.keychain setObject:pwd forKey:(__bridge id)kSecValueData]
+    #define saveUserLoginType(i)  [[NSUserDefaults standardUserDefaults] setInteger:i forKey:@"LoginType"]
+    #define getUserLoginType() [[NSUserDefaults standardUserDefaults] integerForKey:@"LoginType"]
 
     #define UserName [AppDel.keychain objectForKey:(__bridge id)(kSecAttrAccount)]
     #define Password [AppDel.keychain objectForKey:(__bridge id)kSecValueData]

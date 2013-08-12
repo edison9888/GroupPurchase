@@ -275,6 +275,11 @@ extern NSString *const UserLoginSuccessNotification;
     
     if(isUserLogin)
     {
+        UserLoginType t = getUserLoginType();
+        if(t == UserLoginTypeNotMember){
+            self.product.priceGroup = self.product.priceNonMember;
+        }
+        
         // 根据商品的不同类型进入不同的订单界面
         if(self.product.type == 2)
         {

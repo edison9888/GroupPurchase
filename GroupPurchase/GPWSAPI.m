@@ -274,8 +274,9 @@
                       success:(void(^)(BOOL aBool))success
                         faile:(void(^)(ErrorType errorType))faile
 {
-    NSString *areaCode = [[NSUserDefaults standardUserDefaults] stringForKey:@"areaCode"];
-    NSDictionary *dic = @{@"uid":userName, @"pwd":password, @"areaCode":areaCode, @"loginType":[NSNumber numberWithInteger:type]};
+   // NSString *areaCode = [[NSUserDefaults standardUserDefaults] stringForKey:@"areaCode"];
+#warning 不同地区传不同地区代码 这里写死 
+    NSDictionary *dic = @{@"uid":userName, @"pwd":password, @"areaCode":@"520100", @"loginType":[NSNumber numberWithInteger:type]};
     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
     [GPWSAPI postDataToServerWithAddress:MakeAPIAddress(SYSTEM_SERVICE, USER_LOGIN) request:[NSMutableURLRequest new] jsonData:data success:^(id jsonObj)
     {

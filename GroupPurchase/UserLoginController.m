@@ -68,10 +68,11 @@ NSString *const UserLoginSuccessNotification = @"UserLoginSuccessNotification";
     [GPWSAPI userLoginWithUserName:userName userPassword:userPassword loginType:_userLoginType success:^(BOOL aBool)
     {
         if(aBool)
-        {            
+        {          
             saveUserName(userName);
             saveUserPassword(userPassword);
-                        
+            saveUserLoginType(_userLoginType);
+            
             // 有MoreControll处理此通知来更新界面
             [self.navigationController popViewControllerAnimated:NO];
             [[NSNotificationCenter defaultCenter] postNotificationName:UserLoginSuccessNotification object:nil];

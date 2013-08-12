@@ -154,7 +154,7 @@ NSString *const SwitchCityNotification = @"SwitchCityNotification";
     }else if([cityName isEqualToString:@"重庆市"]){
         [[NSUserDefaults standardUserDefaults] setObject:@"510000" forKey:AreaCode];
         [[NSUserDefaults standardUserDefaults] setObject:@"13" forKey:CityCode];
-    }else{
+    }else {
         [[NSUserDefaults standardUserDefaults] setObject:@"null" forKey:AreaCode];
         //[[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:CityCode];
     }

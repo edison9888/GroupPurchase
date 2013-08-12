@@ -12,7 +12,7 @@
 // 产品详情
 @class Product;
 @interface ProductDetailController : UIViewController<NetErrorViewControllerDelegate>
-@property(nonatomic,strong) Product *product;
+@property(nonatomic,copy) Product *product;
 @property(nonatomic, assign) BOOL showFavoriteButton;  // YES为显示收藏按钮,默认为YES.
 
 - (IBAction)buyNow:(id)sender;

@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GroupPurchase/GPWSAPI.m"
-         timestampString = "397361685.617994"
+         timestampString = "397992737.100269"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "632"
-         endingLineNumber = "632"
+         startingLineNumber = "633"
+         endingLineNumber = "633"
          landmarkName = "+refundWithOrderNumber:userName:verificationCode:reason:success:faile:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GroupPurchase/GPWSAPI.m"
-         timestampString = "397361685.617994"
+         timestampString = "397992737.100269"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "634"
-         endingLineNumber = "634"
+         startingLineNumber = "635"
+         endingLineNumber = "635"
          landmarkName = "+refundWithOrderNumber:userName:verificationCode:reason:success:faile:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,12 +47,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GroupPurchase/GPWSAPI.m"
-         timestampString = "397558563.138508"
+         timestampString = "397992737.100269"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "392"
-         endingLineNumber = "392"
+         startingLineNumber = "393"
+         endingLineNumber = "393"
          landmarkName = "+addShippingAddressWithConsigneName:telphone:address:zipcode:isDefaultAddress:userName:userPassword:success:faile:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GroupPurchase/GPWSAPI.m"
+         timestampString = "397993800.564101"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "279"
+         endingLineNumber = "279"
+         landmarkName = "+userLoginWithUserName:userPassword:loginType:success:faile:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
